@@ -53,10 +53,11 @@ cp .env.example .env
 # ثم قم بتحرير .env وإضافة رمز البوت
 ```
 
-5. **تشغيل البوت:**
-```bash
+5. تشغيل البوت:
+# للملفات الصغيرة (حتى 20 ميجابايت):
 python3 telegram_drive_bot.py
-```
+# للملفات الكبيرة (حتى 2 جيجابايت) باستخدام خادم Telegram Bot API المحلي:
+python3 telegram_drive_bot_large_files.py
 
 ## ⚙️ الإعداد التفصيلي
 
@@ -116,14 +117,21 @@ GOOGLE_CREDENTIALS_FILE=credentials.json
 
 ## 🌐 النشر على الخدمات المجانية
 
-### Render.com (الأسهل)
-
-1. أنشئ حساب على [Render.com](https://render.com)
-2. اربط مستودع GitHub الخاص بك
-3. أنشئ "Web Service" جديد
-4. أضف متغيرات البيئة
-5. انشر المشروع
-
+### النشر على Render.com
+1. أنشئ حسابًا على [Render.com](https://render.com).
+2. اربط مستودع GitHub الخاص بك (`DrAbdulmalek/telegram-drive-bot`).
+3. أنشئ خدمة ويب جديدة:
+   - اختر "Docker" كبيئة.
+   - استخدم `docker-compose.yml` لتشغيل خادم Telegram Bot API والبوت.
+4. أضف متغيرات البيئة التالية:
+   - `TELEGRAM_BOT_TOKEN`: رمز البوت من @BotFather.
+   - `GOOGLE_DRIVE_FOLDER_ID`: معرف مجلد Google Drive.
+   - `OWNER_ID`: معرف مستخدم Telegram الخاص بك.
+   - `BOT_API_SERVER`: `http://telegram-bot-api:8081`.
+   - `TELEGRAM_API_ID`: من my.telegram.org.
+   - `TELEGRAM_API_HASH`: من my.telegram.org.
+   - `GOOGLE_CREDENTIALS`: محتوى ملف `credentials.json` كسلسلة JSON.
+5. انشر الخدمة وتحقق من السجلات.
 ### Railway.app
 
 ```bash

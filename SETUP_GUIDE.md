@@ -146,11 +146,15 @@ GOOGLE_CREDENTIALS_FILE=credentials.json
 python3 setup_google_credentials.py
 ```
 
-### الخطوة 6: تشغيل البوت
+### تشغيل البوت
+- للملفات الصغيرة (حتى 20 ميجابايت):
+  ```bash
+  python3 telegram_drive_bot.py
 
-```bash
-python3 telegram_drive_bot.py
-```
+للملفات الكبيرة (حتى 2 جيجابايت):
+bashpython3 telegram_drive_bot_large_files.py
+ملاحظة: يتطلب تشغيل الملفات الكبيرة إعداد خادم Telegram Bot API المحلي باستخدام Docker (راجع LARGE_FILES_GUIDE.md).
+
 
 إذا ظهرت رسالة "بدء تشغيل البوت..." فكل شيء يعمل بشكل صحيح!
 
